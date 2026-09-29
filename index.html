@@ -1,1 +1,982 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Click Seguro | Tablón Comercial USB</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #17212b;
+    line-height: 1.5;
+}
+
+/* HEADER */
+
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #e1e5e9;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #8b1538;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.brand-text strong {
+    display: block;
+    font-size: 17px;
+}
+
+.brand-text span {
+    font-size: 12px;
+    color: #68737d;
+}
+
+/* HERO */
+
+.hero {
+    background: #12263a;
+    color: white;
+    padding: 55px 22px;
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 6vw, 58px);
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #dce5ec;
+    font-size: 17px;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 28px;
+    background: #ffffff;
+    color: #12263a;
+    padding: 13px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 45px 22px;
+}
+
+.section-title {
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    font-size: 28px;
+}
+
+.section-title p {
+    color: #68737d;
+    margin-top: 5px;
+}
+
+/* SEARCH */
+
+.search-box {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #e1e5e9;
+    margin-bottom: 28px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccd3da;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* CARDS */
+
+.providers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 14px;
+    padding: 22px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+}
+
+.profile {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #dfe5ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.verified {
+    color: #16794c;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.category {
+    display: inline-block;
+    background: #eef2f5;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid #edf0f2;
+    border-bottom: 1px solid #edf0f2;
+    padding: 14px 0;
+    margin: 10px 0 16px;
+}
+
+.stats strong {
+    display: block;
+    font-size: 18px;
+}
+
+.stats span {
+    font-size: 11px;
+    color: #68737d;
+}
+
+.button {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 7px;
+    background: #12263a;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+/* HOW IT WORKS */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.step {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.step-number {
+    font-size: 12px;
+    color: #8b1538;
+    font-weight: bold;
+}
+
+.step h3 {
+    margin: 8px 0;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 200;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    max-width: 520px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin-bottom: 5px;
+}
+
+.modal-subtitle {
+    color: #68737d;
+    margin-bottom: 20px;
+}
+
+.info-row {
+    padding: 13px 0;
+    border-bottom: 1px solid #edf0f2;
+}
+
+.info-row span {
+    display: block;
+    font-size: 12px;
+    color: #68737d;
+}
+
+.info-row strong {
+    font-size: 15px;
+}
+
+.incident {
+    margin-top: 20px;
+    background: #f8f1f3;
+    border-left: 4px solid #8b1538;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.demo {
+    text-align: center;
+    font-size: 11px;
+    color: #7a858f;
+    margin-top: 35px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #12263a;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 20px;
+}
+
+footer strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+footer span {
+    color: #bfcbd4;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+
+    .header-content {
+        padding: 14px 16px;
+    }
+
+    .hero {
+        padding: 42px 20px;
+    }
+
+    .container {
+        padding: 35px 16px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .stats {
+        gap: 12px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="header-content">
+
+<div class="brand">
+
+<div class="logo">
+USB
+</div>
+
+<div class="brand-text">
+<strong>CLICK SEGURO</strong>
+<span>Tablón Comercial USB</span>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-tag">
+PROTOTIPO DE ECOSISTEMA DE COMERCIO DIGITAL
+</div>
+
+<h1>
+Comercio con identidad.<br>
+Operaciones con trazabilidad.
+</h1>
+
+<p>
+Click Seguro propone un entorno digital donde los proveedores
+pueden ser verificados institucionalmente y las operaciones
+comerciales pueden generar trazabilidad y mecanismos de atención
+de incidencias.
+</p>
+
+<a href="#proveedores" class="hero-button">
+Explorar proveedores
+</a>
+
+</div>
+
+</section>
+
+
+<!-- PROVEEDORES -->
+
+<main class="container" id="proveedores">
+
+<div class="section-title">
+
+<h2>Proveedores verificados</h2>
+
+<p>
+Personas registradas dentro del ecosistema piloto.
+</p>
+
+</div>
+
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+placeholder="Buscar proveedor o categoría..."
+onkeyup="buscarProveedor()"
+>
+
+</div>
+
+
+<div class="providers">
+
+
+<!-- PROVEEDOR 1 -->
+
+<div class="card proveedor">
+
+<div class="profile">
+
+<div class="avatar">
+JP
+</div>
+
+<div>
+
+<div class="name">
+Juan Pérez
+</div>
+
+<div class="verified">
+✓ Estudiante verificado
+</div>
+
+</div>
+
+</div>
+
+<div class="category">
+Tecnología y accesorios
+</div>
+
+<div class="stats">
+
+<div>
+<strong>12</strong>
+<span>OPERACIONES</span>
+</div>
+
+<div>
+<strong>11</strong>
+<span>EXITOSAS</span>
+</div>
+
+<div>
+<strong>1</strong>
+<span>INCIDENCIA</span>
+</div>
+
+</div>
+
+<button class="button"
+onclick="abrirPerfil('Juan Pérez','Tecnología y accesorios','12','11','1')">
+
+Ver perfil
+
+</button>
+
+</div>
+
+
+<!-- PROVEEDOR 2 -->
+
+<div class="card proveedor">
+
+<div class="profile">
+
+<div class="avatar">
+ML
+</div>
+
+<div>
+
+<div class="name">
+María López
+</div>
+
+<div class="verified">
+✓ Estudiante verificada
+</div>
+
+</div>
+
+</div>
+
+<div class="category">
+Repostería y alimentos
+</div>
+
+<div class="stats">
+
+<div>
+<strong>8</strong>
+<span>OPERACIONES</span>
+</div>
+
+<div>
+<strong>8</strong>
+<span>EXITOSAS</span>
+</div>
+
+<div>
+<strong>0</strong>
+<span>INCIDENCIAS</span>
+</div>
+
+</div>
+
+<button class="button"
+onclick="abrirPerfil('María López','Repostería y alimentos','8','8','0')">
+
+Ver perfil
+
+</button>
+
+</div>
+
+
+<!-- PROVEEDOR 3 -->
+
+<div class="card proveedor">
+
+<div class="profile">
+
+<div class="avatar">
+CR
+</div>
+
+<div>
+
+<div class="name">
+Carlos Rojas
+</div>
+
+<div class="verified">
+✓ Estudiante verificado
+</div>
+
+</div>
+
+</div>
+
+<div class="category">
+Diseño gráfico
+</div>
+
+<div class="stats">
+
+<div>
+<strong>15</strong>
+<span>OPERACIONES</span>
+</div>
+
+<div>
+<strong>14</strong>
+<span>EXITOSAS</span>
+</div>
+
+<div>
+<strong>1</strong>
+<span>INCIDENCIA</span>
+</div>
+
+</div>
+
+<button class="button"
+onclick="abrirPerfil('Carlos Rojas','Diseño gráfico','15','14','1')">
+
+Ver perfil
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- COMO FUNCIONA -->
+
+<section style="margin-top:60px">
+
+<div class="section-title">
+
+<h2>¿Cómo funciona Click Seguro?</h2>
+
+<p>
+El modelo conecta identidad, comercio, trazabilidad y mecanismos de solución.
+</p>
+
+</div>
+
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-number">
+01 · IDENTIDAD
+</div>
+
+<h3>Verificación</h3>
+
+<p>
+Se verifica que el proveedor pertenece a la comunidad universitaria.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02 · COMERCIO
+</div>
+
+<h3>Oferta</h3>
+
+<p>
+El proveedor puede ofrecer productos o servicios dentro del tablón.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03 · TRAZABILIDAD
+</div>
+
+<h3>Operación</h3>
+
+<p>
+Se registra el resultado de las operaciones realizadas.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04 · SOLUCIÓN
+</div>
+
+<h3>Conciliación</h3>
+
+<p>
+Las incidencias pueden ser derivadas al mecanismo institucional correspondiente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<div class="demo">
+
+PROTOTIPO ACADÉMICO · DATOS COMPLETAMENTE FICTICIOS
+
+</div>
+
+</main>
+
+
+<!-- MODAL PERFIL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<button class="close" onclick="cerrarPerfil()">
+×
+</button>
+
+<h2 id="perfilNombre">
+Juan Pérez
+</h2>
+
+<div class="modal-subtitle">
+✓ Proveedor verificado · Comunidad USB
+</div>
+
+
+<div class="info-row">
+
+<span>ACTIVIDAD</span>
+
+<strong id="perfilCategoria">
+Tecnología y accesorios
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<span>ESTADO INSTITUCIONAL</span>
+
+<strong>
+✓ Estudiante verificado
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<span>OPERACIONES REGISTRADAS</span>
+
+<strong id="perfilOperaciones">
+12
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<span>OPERACIONES EXITOSAS</span>
+
+<strong id="perfilExitosas">
+11
+</strong>
+
+</div>
+
+
+<div class="info-row">
+
+<span>INCIDENCIAS REPORTADAS</span>
+
+<strong id="perfilIncidencias">
+1
+</strong>
+
+</div>
+
+
+<div class="incident">
+
+<strong>¿Existe una incidencia?</strong>
+
+<p style="margin-top:6px;font-size:13px">
+
+El modelo contempla mecanismos institucionales
+para la atención de controversias y la búsqueda
+de acuerdos mediante conciliación.
+
+</p>
+
+<button
+class="button"
+style="margin-top:12px"
+onclick="mostrarIncidencia()">
+
+Reportar incidencia
+
+</button>
+
+</div>
+
+
+<div id="formulario" style="display:none;margin-top:20px">
+
+<h3 style="margin-bottom:12px">
+Reporte de incidencia
+</h3>
+
+<select style="width:100%;padding:12px;border:1px solid #ccd3da;border-radius:7px">
+
+<option>Producto no entregado</option>
+<option>Producto diferente al acordado</option>
+<option>Servicio no prestado</option>
+<option>Problema con el pago</option>
+<option>Otro</option>
+
+</select>
+
+<button
+class="button"
+style="margin-top:12px"
+onclick="confirmarIncidencia()">
+
+Enviar reporte
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<strong>CLICK SEGURO · TABLÓN COMERCIAL USB</strong>
+
+<span>
+Prototipo académico para experimentación de un ecosistema
+de comercio digital basado en identidad, trazabilidad y conciliación.
+</span>
+
+</footer>
+
+
+<script>
+
+function abrirPerfil(nombre,categoria,operaciones,exitosas,incidencias){
+
+document.getElementById("perfilNombre").innerText = nombre;
+
+document.getElementById("perfilCategoria").innerText = categoria;
+
+document.getElementById("perfilOperaciones").innerText = operaciones;
+
+document.getElementById("perfilExitosas").innerText = exitosas;
+
+document.getElementById("perfilIncidencias").innerText = incidencias;
+
+document.getElementById("formulario").style.display = "none";
+
+document.getElementById("modal").style.display = "flex";
+
+}
+
+
+function cerrarPerfil(){
+
+document.getElementById("modal").style.display = "none";
+
+}
+
+
+function mostrarIncidencia(){
+
+document.getElementById("formulario").style.display = "block";
+
+}
+
+
+function confirmarIncidencia(){
+
+document.getElementById("formulario").innerHTML = `
+
+<div style="text-align:center;padding:10px">
+
+<div style="font-size:35px;margin-bottom:10px">
+✓
+</div>
+
+<h3>Solicitud registrada</h3>
+
+<p style="margin-top:8px;color:#68737d">
+
+Esta demostración representa el inicio
+del proceso institucional de atención
+de una incidencia.
+
+</p>
+
+</div>
+
+`;
+
+}
+
+
+function buscarProveedor(){
+
+let texto = document.getElementById("search").value.toLowerCase();
+
+let proveedores = document.querySelectorAll(".proveedor");
+
+proveedores.forEach(function(proveedor){
+
+let contenido = proveedor.innerText.toLowerCase();
+
+if(contenido.includes(texto)){
+
+proveedor.style.display = "block";
+
+}else{
+
+proveedor.style.display = "none";
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
