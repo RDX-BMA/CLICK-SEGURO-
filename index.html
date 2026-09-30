@@ -477,65 +477,78 @@ footer span {
     </div>
 </section>
 
-<!-- SECCIÓN DE REGISTRO / AFILIACIÓN PILOTO USB -->
-<section id="registro" style="background: #ffffff; padding: 50px 20px;">
-    <div style="max-width: 580px; margin: 0 auto; background: #f8fafc; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+<!-- SECCIÓN DE REGISTRO INSTITUCIONAL Y LOGOTIPO INTEGRADO -->
+<section id="registro" style="background: #ffffff; padding: 60px 20px;">
+    <div style="max-width: 1150px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
         
-        <!-- Título del Formulario -->
-        <div style="text-align: center; margin-bottom: 30px;">
-            <span style="background: #8b1538; color: white; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">Piloto Académico USB</span>
-            <h2 style="font-size: 24px; font-weight: 700; color: #12263a; margin-top: 10px;">Registro Institucional</h2>
-            <p style="font-size: 13px; color: #64748b; margin-top: 5px;">Habilita tu perfil verificado como <strong>Comprador</strong> o <strong>Proveedor</strong> en el ecosistema.</p>
+        <!-- CAJA DE REGISTRO (Movida a la izquierda, contenido 100% original) -->
+        <div style="width: 100%; max-width: 560px; background: #f8fafc; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+            
+            <!-- Título del Formulario -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <span style="background: #8b1538; color: white; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">Piloto Académico USB</span>
+                <h2 style="font-size: 24px; font-weight: 700; color: #12263a; margin-top: 10px;">Registro Institucional</h2>
+                <p style="font-size: 13px; color: #64748b; margin-top: 5px;">Habilita tu perfil verificado como <strong>Comprador</strong> o <strong>Proveedor</strong> en el ecosistema.</p>
+            </div>
+
+            <!-- Formulario Estático -->
+            <form onsubmit="event.preventDefault(); alert('¡Simulación de registro exitosa! Credencial generada para el ecosistema USB.');" style="display: flex; flex-direction: column; gap: 16px;">
+                
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Nombre Completo</label>
+                    <input type="text" placeholder="Ej. Juan Pérez Silva" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div>
+                        <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Nick / Alias</label>
+                        <input type="text" placeholder="Ej. JuanStore" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">RU (Registro Universitario)</label>
+                        <input type="text" placeholder="Ej. 61234" maxlength="5" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                    </div>
+                </div>
+
+                <!-- Campos separados: Correo Institucional y Contacto -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div>
+                        <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Correo Institucional</label>
+                        <input type="email" placeholder="usuario@ulasalle.edu.bo" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Contacto (Celular)</label>
+                        <input type="tel" placeholder="Ej. 71234567" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                    </div>
+                </div>
+
+                <!-- Casilla de Términos y Condiciones -->
+                <div style="display: flex; align-items: flex-start; gap: 10px; margin-top: 5px;">
+                    <input type="checkbox" id="terminos" required style="margin-top: 4px; width: 16px; height: 16px; accent-color: #8b1538; cursor: pointer;">
+                    <label for="terminos" style="font-size: 12px; color: #475569; line-height: 1.4; cursor: pointer;">
+                        Acepto los <span style="color: #8b1538; font-weight: 600;">Términos y Políticas de Trazabilidad</span> del piloto institucional de la Universidad Salesiana de Bolivia.
+                    </label>
+                </div>
+
+                <!-- Botón de Envío -->
+                <button type="submit" style="margin-top: 10px; background: #12263a; color: white; border: none; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer; transition: background 0.2s; font-family: 'Poppins', sans-serif;">
+                    Registrar Credencial Segura
+                </button>
+            </form>
+
         </div>
 
-        <!-- Formulario Estático -->
-        <form onsubmit="event.preventDefault(); alert('¡Simulación de registro exitosa! Credencial generada para el ecosistema USB.');" style="display: flex; flex-direction: column; gap: 16px;">
-            
-            <div>
-                <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Nombre Completo</label>
-                <input type="text" placeholder="Ej. Juan Pérez Silva" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Nick / Alias</label>
-                    <input type="text" placeholder="Ej. JuanStore" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
-                </div>
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">RU (Registro Universitario)</label>
-                    <input type="text" placeholder="Ej. 61234" maxlength="5" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
-                </div>
-            </div>
-
-            <!-- Campos separados: Correo Institucional y Contacto -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Correo Institucional</label>
-                    <input type="email" placeholder="usuario@ulasalle.edu.bo" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
-                </div>
-                <div>
-                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Contacto (Celular)</label>
-                    <input type="tel" placeholder="Ej. 71234567" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
-                </div>
-            </div>
-
-            <!-- Casilla de Términos y Condiciones -->
-            <div style="display: flex; align-items: flex-start; gap: 10px; margin-top: 5px;">
-                <input type="checkbox" id="terminos" required style="margin-top: 4px; width: 16px; height: 16px; accent-color: #8b1538; cursor: pointer;">
-                <label for="terminos" style="font-size: 12px; color: #475569; line-height: 1.4; cursor: pointer;">
-                    Acepto los <span style="color: #8b1538; font-weight: 600;">Términos y Políticas de Trazabilidad</span> del piloto institucional de la Universidad Salesiana de Bolivia.
-                </label>
-            </div>
-
-            <!-- Botón de Envío -->
-            <button type="submit" style="margin-top: 10px; background: #12263a; color: white; border: none; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer; transition: background 0.2s; font-family: 'Poppins', sans-serif;">
-                Registrar Credencial Segura
-            </button>
-        </form>
+        <!-- COLUMNA DERECHA: LOGOTIPO INTEGRADO Y ARMÓNICO -->
+        <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 45px 30px; border-radius: 16px; border: 1px solid #e2e8f0; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.02);">
+            <img src="click-seguro-logo.png" alt="Click Seguro USB" style="width: 100%; max-width: 320px; height: auto; object-fit: contain; margin-bottom: 20px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.06));">
+            <h3 style="font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 800; color: #12263a; margin-bottom: 8px;">Ecosistema Certificado</h3>
+            <p style="font-family: 'Poppins', sans-serif; font-size: 13px; color: #64748b; line-height: 1.5; max-width: 300px;">
+                Validación institucional de identidad, seguridad jurídica y trazabilidad de operaciones para la comunidad universitaria.
+            </p>
+        </div>
 
     </div>
 </section>
-
 <!-- PROVEEDORES -->
 
 <main class="container" id="proveedores">
