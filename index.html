@@ -400,16 +400,22 @@ footer span {
 
 <!-- HEADER -->
 
-<header class="header">
-    <div class="header-content">
-        <div class="brand" style="display: flex; align-items: center;">
-            <img src="logo_usb.png.png" alt="Logo USB" style="height: 55px; width: auto; object-fit: contain; transform: scale(1.6); transform-origin: left center; margin-left: 5px; mix-blend-mode: multiply;">
-            <div class="brand-text" style="margin-left: 22px;">
-                <strong style="font-size: 20px; font-weight: 700; color: #12263a; letter-spacing: 0.5px;">CLICK SEGURO</strong>
-                <span style="display: block; font-size: 30px; font-weight: 600; color: #8b1538; letter-spacing: 0.5px; margin-top: 2px;">UNIVERSIDAD SALESIANA DE BOLIVIA</span>
-            </div>
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; background: #ffffff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000;">
+    <div style="display: flex; align-items: center; gap: 16px;">
+        <!-- Logotipo institucional -->
+        <img src="logo.png" alt="Logo USB" style="height: 55px; width: auto; object-fit: contain;">
+        
+        <!-- Títulos con jerarquía equilibrada -->
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <span style="font-size: 22px; font-weight: 800; color: #12263a; letter-spacing: 0.5px; line-height: 1.1;">CLICK SEGURO</span>
+            <span style="font-size: 13px; font-weight: 700; color: #8b1538; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 3px; line-height: 1.2;">Universidad Salesiana de Bolivia</span>
         </div>
     </div>
+
+    <!-- Opcional: Enlaces de navegación rápidos si los tienes -->
+    <nav style="display: flex; gap: 20px; align-items: center;">
+        <a href="#registro" style="background: #8b1538; color: white; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; transition: background 0.2s;">Acceder al Piloto</a>
+    </nav>
 </header>
 
 
