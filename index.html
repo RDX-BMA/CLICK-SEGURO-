@@ -443,39 +443,46 @@ Explorar proveedores
 
 </section>
 
-<!-- SECCIÓN DE REGISTRO / AFILIACIÓN PILOTO -->
+<!-- SECCIÓN DE REGISTRO / AFILIACIÓN PILOTO USB -->
 <section id="registro" style="background: #ffffff; padding: 50px 20px;">
-    <div style="max-width: 550px; margin: 0 auto; background: #f8fafc; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+    <div style="max-width: 580px; margin: 0 auto; background: #f8fafc; padding: 40px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
         
         <!-- Título del Formulario -->
         <div style="text-align: center; margin-bottom: 30px;">
             <span style="background: #8b1538; color: white; font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">Piloto Académico USB</span>
-            <h2 style="font-size: 26px; font-weight: 700; color: #12263a; margin-top: 10px;">Registro de Proveedor Verificado</h2>
-            <p style="font-size: 14px; color: #64748b; margin-top: 5px;">Completa tus datos para habilitar tu perfil institucional en el tablón.</p>
+            <h2 style="font-size: 24px; font-weight: 700; color: #12263a; margin-top: 10px;">Registro Institucional</h2>
+            <p style="font-size: 13px; color: #64748b; margin-top: 5px;">Habilita tu perfil verificado como <strong>Comprador</strong> o <strong>Proveedor</strong> en el ecosistema.</p>
         </div>
 
         <!-- Formulario Estático -->
-        <form onsubmit="event.preventDefault(); alert('¡Simulación de registro exitosa! Credencial generada.');" style="display: flex; flex-direction: column; gap: 18px;">
+        <form onsubmit="event.preventDefault(); alert('¡Simulación de registro exitosa! Credencial generada para el ecosistema USB.');" style="display: flex; flex-direction: column; gap: 16px;">
             
             <div>
                 <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Nombre Completo</label>
-                <input type="text" placeholder="Ej. Rodrigo Brandon Mamani" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                <input type="text" placeholder="Ej. Juan Pérez Silva" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                 <div>
-                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Nick / Alias comercial</label>
-                    <input type="text" placeholder="Ej. RDX Store" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Nick / Alias</label>
+                    <input type="text" placeholder="Ej. JuanStore" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
                 </div>
                 <div>
                     <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">RU (Registro Universitario)</label>
-                    <input type="text" placeholder="Ej. 202412345" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                    <input type="text" placeholder="Ej. 61234" maxlength="5" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
                 </div>
             </div>
 
-            <div>
-                <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Correo Institucional / Contacto</label>
-                <input type="email" placeholder="tucuenta@ulasalle.edu.bo" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+            <!-- Campos separados: Correo Institucional y Contacto -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Correo Institucional</label>
+                    <input type="email" placeholder="usuario@ulasalle.edu.bo" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 6px;">Contacto (Celular)</label>
+                    <input type="tel" placeholder="Ej. 71234567" required style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px; background: #fff;">
+                </div>
             </div>
 
             <!-- Casilla de Términos y Condiciones -->
