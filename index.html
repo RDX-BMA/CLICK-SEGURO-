@@ -1060,28 +1060,23 @@ proveedor.style.display = "none";
 </script>
     
 <script>
-  // 1. Cerrar con la tecla ESC en cualquier momento
+  // Script universal para cerrar cualquier ventana flotante o modal de perfil con la tecla ESC
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
-      cerrarModalFlotante();
+      // Selecciona todos los contenedores flotantes activos en la página
+      const elementosFlotantes = document.querySelectorAll('div');
+      elementosFlotantes.forEach(el => {
+        const estilo = window.getComputedStyle(el);
+        // Detecta cualquier elemento con posicionamiento flotante (fixed o absolute) y z-index alto
+        if ((estilo.position === 'fixed' || estilo.position === 'absolute') && parseInt(estilo.zIndex) > 10) {
+          // Asegurarse de no afectar al menú de navegación superior (header)
+          if (!el.querySelector('header') && !el.classList.contains('header')) {
+            el.style.display = 'none';
+          }
+        }
+      });
     }
   });
-
-  // 2. Función universal para ocultar la ventana flotante
-  function cerrarModalFlotante() {
-    // Busca contenedores con position fixed (que suelen ser las capas flotantes o modales)
-    const elementosFlotantes = document.querySelectorAll('div');
-    elementosFlotantes.forEach(el => {
-      const estilo = window.getComputedStyle(el);
-      // Si el elemento está flotando sobre la pantalla (fixed o absolute con z-index alto)
-      if ((estilo.position === 'fixed' || estilo.position === 'absolute') && parseInt(estilo.zIndex) > 10) {
-        // Evitamos afectar al header principal que es sticky
-        if (!el.querySelector('header') && el.innerHTML.includes('Carlos Rojas')) {
-          el.style.display = 'none';
-        }
-      }
-    });
-  }
 </script>
 </body>
 </html>
