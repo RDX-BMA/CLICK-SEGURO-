@@ -1058,6 +1058,24 @@ proveedor.style.display = "none";
 }
 
 </script>
+<script>
+  // Función global para cerrar el apartado flotante
+  function cerrarModal() {
+    const modal = document.getElementById('modal-detalle'); // Asegúrate de que tu contenedor tenga este ID o cámbialo por el tuyo
+    if (modal) {
+      modal.style.display = 'none';
+    } else {
+      // Alternativa si el contenido se oculta cambiando la URL o el estado
+      window.history.back();
+    }
+  }
 
+  // Escuchar la tecla ESC para cerrar automáticamente
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      cerrarModal();
+    }
+  });
+</script>
 </body>
 </html>
