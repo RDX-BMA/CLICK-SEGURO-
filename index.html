@@ -445,32 +445,42 @@ footer span {
     
 <!-- HERO -->
 
-<section class="hero">
+<!-- SECCIÓN HERO / BANNER PRINCIPAL CON MARCA DE AGUA -->
+<section style="background: linear-gradient(135deg, #0b192c 0%, #12263a 100%); padding: 80px 40px; position: relative; overflow: hidden; border-bottom: 1px solid #1e293b;">
+    
+    <!-- Marca de agua institucional de fondo con transparencia -->
+    <div style="position: absolute; right: -40px; top: 50%; transform: translateY(-50%); width: 480px; opacity: 0.12; pointer-events: none; mix-blend-mode: luminosity; z-index: 1;">
+        <img src="CLICK.png" alt="Marca de agua Click Seguro" style="width: 100%; height: auto; border-radius: 12px;">
+    </div>
 
-<div class="hero-content">
+    <div style="max-width: 1100px; margin: 0 auto; position: relative; z-index: 2;">
+        
+        <!-- Etiqueta superior -->
+        <div style="display: inline-block; background: rgba(139, 21, 56, 0.2); border: 1px solid rgba(139, 21, 56, 0.4); padding: 6px 14px; border-radius: 20px; margin-bottom: 20px;">
+            <span style="color: #fca5a5; font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Piloto de Registro de Comercio Digital</span>
+        </div>
 
-<div class="hero-tag">
-PILOTO DE REGISTRO DE COMERCIO DIGITAL
-</div>
+        <!-- Título principal con Montserrat -->
+        <h1 style="font-family: 'Montserrat', sans-serif; font-size: clamp(32px, 5vw, 52px); font-weight: 900; color: #ffffff; line-height: 1.1; margin-bottom: 20px; max-width: 750px;">
+            Comercio con identidad. <br><span style="color: #38bdf8;">Operaciones con trazabilidad.</span>
+        </h1>
 
-<h1>
-Comercio con identidad.<br>
-Operaciones con trazabilidad.
-</h1>
+        <!-- Descripción -->
+        <p style="font-family: 'Poppins', sans-serif; font-size: 16px; color: #94a3b8; line-height: 1.6; margin-bottom: 35px; max-width: 650px;">
+            Click Seguro propone un entorno digital donde los proveedores de la Universidad Salesiana de Bolivia pueden ser verificados institucionalmente, generando confianza, transparencia y mecanismos de atención de incidencias.
+        </p>
 
-<p>
-Click Seguro propone un entorno digital donde los proveedores
-pueden ser verificados institucionalmente y las operaciones
-comerciales pueden generar trazabilidad y mecanismos de atención
-de incidencias.
-</p>
+        <!-- Botones de acción -->
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="#registro" style="background: #8b1538; color: white; padding: 12px 26px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; font-family: 'Poppins', sans-serif; box-shadow: 0 4px 15px rgba(139,21,56,0.4); transition: background 0.2s;">
+                Registrarse al Piloto
+            </a>
+            <a href="#proveedores" style="background: rgba(255,255,255,0.08); color: white; border: 1px solid rgba(255,255,255,0.15); padding: 12px 26px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; font-family: 'Poppins', sans-serif; backdrop-filter: blur(5px);">
+                Explorar Proveedores
+            </a>
+        </div>
 
-<a href="#proveedores" class="hero-button">
-Explorar productos
-</a>
-
-</div>
-
+    </div>
 </section>
 
 <!-- SECCIÓN DE REGISTRO / AFILIACIÓN PILOTO USB -->
